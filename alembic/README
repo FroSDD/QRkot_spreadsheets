@@ -1,0 +1,6 @@
+Общие команды для Alembic:
+Автоматическое создание файла миграций : alembic revision --autogenerate -m "First migration"
+Выполнение всех миграций: alembic upgrade head
+Откат к предыдущему состоянию: alembic downgrade base
+Отчет в терминале о хронологическом порядке миграций: alembic history -v
+Последняя примененная миграция: alembic current
