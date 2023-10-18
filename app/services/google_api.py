@@ -14,11 +14,11 @@ async def spreadsheets_create(wrapper_services: Aiogoogle) -> str:
     now_date_time = datetime.now().strftime(FORMAT)
     service = await wrapper_services.discover('sheets', 'v4')
     spreadsheet_body = {
-        'properties': {'title': f'QRKot_Отчет на {now_date_time}',
+        'properties': {'title': f'Отчет от {now_date_time}',
                        'locale': 'ru_RU'},
         'sheets': [{'properties': {'sheetType': 'GRID',
                                    'sheetId': 0,
-                                   'title': 'Скорость закрытия',
+                                   'title': 'Лист1',
                                    'gridProperties': {'rowCount': 100,
                                                       'columnCount': 11}}}]
     }
