@@ -97,15 +97,15 @@ class CRUDCharityProject(
             self,
             session: AsyncSession
     ) -> List[Dict[str, str]]:
-        projects = await session.execute(
+        charity_projects = await session.execute(
             select([CharityProject]).where(CharityProject.fully_invested)
         )
-        projects = projects.scalars().all()
+        charity_projects = charity_projects.scalars().all()
         project_list = []
-        for project in projects:
+        for project in charity_projects:
             project_list.append({
-                'name': project.name,
-                'duration': project.close_date - project.create_date,
+                'project_name': project.name,
+                'collection_time': project.close_date - project.create_date,
                 'description': project.description
             })
         project_list = sorted(project_list, key=lambda x: x['duration'])

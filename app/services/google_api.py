@@ -47,7 +47,7 @@ async def set_user_permissions(
 
 async def spreadsheets_update_value(
         spreadsheetid: str,
-        projects: List[CharityProject],
+        charity_projects: List[CharityProject],
         wrapper_services: Aiogoogle
 ) -> None:
     now_date_time = datetime.now().strftime(FORMAT)
@@ -57,10 +57,10 @@ async def spreadsheets_update_value(
         ['Топ проектов по скорости закрытия'],
         ['Название проекта', 'Время сбора', 'Описание']
     ]
-    for project in projects:
+    for project in charity_projects:
         new_row = [
-            str(project['name']),
-            str(project['duration']),
+            str(project['project_name']),
+            str(project['collection_time']),
             str(project['description'])
         ]
         table_values.append(new_row)
