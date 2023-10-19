@@ -10,9 +10,6 @@ from app.core.config import settings
 from app.models import CharityProject
 
 
-FORMAT = '%Y/%m/%d %H:%M:%S'
-
-
 async def spreadsheets_create(wrapper_services: Aiogoogle) -> str:
     now_date_time = datetime.now().strftime(GOOGLE_FORMAT)
     service = await wrapper_services.discover('sheets', GOOGLE_SHEETS_VERSION)
