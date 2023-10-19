@@ -50,7 +50,7 @@ async def spreadsheets_update_value(
         charity_projects: List[CharityProject],
         wrapper_services: Aiogoogle
 ) -> None:
-    now_date_time = datetime.now().strftime(FORMAT)
+    now_date_time = datetime.now().strftime(GOOGLE_FORMAT)
     service = await wrapper_services.discover('sheets', GOOGLE_SHEETS_VERSION)
     table_values = [
         ['Отчет от', now_date_time],
